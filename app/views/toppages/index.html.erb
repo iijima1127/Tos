@@ -1,7 +1,7 @@
 <div class="main-image">
   <h1>Try One Step</h1>
-    <p class="main-p">一歩踏み出すことで変化は起こる</p>
-     <button class="mainbutton" type="submit">さっそく一歩踏み出す</button>
+    <p class="main-p">行動を起こすことで変化が起こる。</p>
+     <button class="mainbutton" type="submit"><%= link_to "一歩踏み出す", signup_path, class: "link-top-1" %></button>
 </div>
 <section class="page-section" id="about">
     <div class="container">
@@ -11,7 +11,7 @@
                 <hr class="divider light my-4" />
                 <p class="text-white-50 mb-4">現状に何か変化が欲しい全ての方に向けたサービスです。
                 <br>「新しいことを始めたい！でも何から始めれば、、」という悩みを解決。
-                <br>Tos!!は「まずは始めてみる」のきっかけとなるでしょう。</p>
+                <br>Tos!!は「まずは始めてみる」のきっかけとなることが目的です。</p>
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
   <i class="fa fa-users fa-5x mt-5"></i> 
     <h2 class="third mt-4">新しく挑戦したいことがない時は...</h2>
      <p class="third mt-3">まずは他の人の挑戦を参考にしてみましょう</p>
-     <button class="users mt-3">Tos!!ユーザーの挑戦へ</button>
+     <button class="users mt-3"><%= link_to " Tos!!ユーザーの挑戦へ", users_path, class: "link-top-2" %></button>
      <p class="user2"><a href="#">~~~~~~~~~~~~~~~~~~~~~~~~</a></p>
   </div>
 <div class="last-colum-all">	

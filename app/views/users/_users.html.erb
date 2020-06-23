@@ -1,0 +1,26 @@
+<% if users.any? %>
+<div class="row mt-5">
+  <% users.each do |user| %>
+  <div class="col-md-3 mt-2 mb-2 ">
+    <div id="usercard" class=" card shadow" >
+      <div class="card-img-top">
+        <% if user.avatar.attached? %>
+          <%= image_tag user.avatar.variant(resize:'360x260').processed %>
+        <% else %>
+          <%= image_tag ("no_image.png"), class:"avatar" %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= user.name %></h5>
+        <div class="card-text">
+          <p>挑戦中:</p>
+          <p class="btn btn-light"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+</div>
+<%= paginate users %>
+<% end %>
+  

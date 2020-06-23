@@ -1,0 +1,95 @@
+<div class="user-top center">
+  <div class="usertop-left">
+    <div id="usershow-card"class=" card shadow" >
+      <div class="card-img-top">
+        <% if @user.avatar.attached? %>
+          <%= image_tag @user.avatar.variant(resize:'360x260').processed %>
+        <% else %>
+          <%= image_tag ("no_image.png"),class:"avatar" %>
+        <% end %>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title"><%= @user.name%></h5>
+      </div>
+    </div>
+  </div>
+  <div class="usertop-right">
+    <p id="user-tr-p"class="border rounded-circle border-dark"></p>
+    <h5 id="user-tr-h5" class="border-bottom">インフルエンス</h5>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-2 offset-md-1">
+    <strong><i class="fas fa-user-circle"></i>　プロフィール：</strong>
+    <p class="ml-4 mt-3"><button><%= link_to 'ユーザー編集', edit_user_path(@user), class: "link" %></button></p>
+    <p class="ml-4 mt-3"><button><%= link_to 'ユーザーリスト', users_path, class: "link" %></button></p>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+        <div class="card-header">
+            <i class="fas fa-info-circle"></i> 
+        </div>
+        <div class="card-body">
+            <%= @user.profile %>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">　
+  <div class="col-md-2 offset-md-1">
+    <strong><i class="fas fa-running"></i>　　挑戦中：</strong>
+  </div>
+  <div class="col-md-8">
+    <form action="complete.html">
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+      <div class="row form-group">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" name="company">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<footer class="last-foot">
+  <div class="row">
+    <div class="last-left col-md-5">
+         <p><i class="fas fa-plane"></i></p>
+          <a href="#">Airbnb Global services Limited</a><br>
+          <a href="#">観光庁長官(01)第00000000号（2018年6月10日-2030年6月9日）</a>
+          <p class="foot">@2019 Koala, inc All rights reserved.</p>
+     </div>
+     <div class="last-right offset-md-4 col-md-3">
+        <button class="jbutton">日本語</button><button class="enbutton">JPY-￥</button>
+      </div>
+  </div>
+</footer>
