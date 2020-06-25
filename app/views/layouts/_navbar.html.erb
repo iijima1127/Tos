@@ -8,8 +8,20 @@
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto my-2 my-lg-0">
+            <% if logged_in?%>
+              <li class="nav-item"><%= link_to 'ユーザーリスト', users_path, class: 'nav-link' %></li>
+              <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+                <ul class="dropdown-menu dropdown-menu-right">
+                  <li class="dropdown-item"><%= link_to 'マイプロフィール', user_path(current_user), class: "link-navuser" %></li>
+                  <li class="dropdown-divider"></li>
+                  <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete, class: "link-navuser" %></li>
+                </ul>
+              </li>
+            <% else %>
               <li class="nav-item"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
-              <li class="nav-item"><a class="nav-link " href="#">ログイン</a></li>
+              <li class="nav-item"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+            <% end %>
           </ul>
       </div>
   </nav>

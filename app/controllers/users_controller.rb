@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_user_logged_in, only: [:edit, :update]
   def index
     @users = User.order(id: :desc).page(params[:page]).per(24)
   end

@@ -239,7 +239,7 @@
 }
 
 /* ↓link_to文字色変更のため*/
-.link,.link-top-1{
+.link,.link-top-1,.link-navuser{
 	color: #808080;
 	
 }
