@@ -1,0 +1,19 @@
+<ul class="list-unstyled">
+  <% challenges.each do |challenge| %>
+    <li>
+      <div class="card mt-3">
+        <div class="card-header">
+          <span class="text-muted">挑戦スタート &#058; <%= challenge.created_at %></span>
+        </div>
+         <div class="card-body">
+           <p>目標 &#058; <%= challenge.goal%></p>
+           <p>挑戦内容 &#058;<%= challenge.challenge %></p>
+          <% if current_user == challenge.user %>
+            <%= link_to "この挑戦を諦める", challenge, method: :delete, data: { confirm: "エピソードも全て消えてしまいますが、本当によろしいですか？" }, class: 'btn btn-danger btn-sm' %>
+          <% end %>
+         </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate challenges %>
+</ul>

@@ -6,6 +6,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @challenge = @user.challenges.build
+    @challenges = @user.challenges.order(id: :desc).page(params[:page]).per(10)
   end
 
   def new

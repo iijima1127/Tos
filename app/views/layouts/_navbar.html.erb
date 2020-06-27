@@ -14,8 +14,9 @@
                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-item"><%= link_to 'マイプロフィール', user_path(current_user), class: "link-navuser" %></li>
+                  <li class="dropdown-item"><%= link_to '挑戦を追加', new_challenge_path, class: "link-navuser" %></li>
                   <li class="dropdown-divider"></li>
-                  <li class="dropdown-item"><%= link_to 'Logout', logout_path, method: :delete, class: "link-navuser" %></li>
+                  <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "link-navuser" %></li>
                 </ul>
               </li>
             <% else %>

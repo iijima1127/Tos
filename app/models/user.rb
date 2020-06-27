@@ -7,4 +7,5 @@ class User < ApplicationRecord
     validates :profile, length: { maximum: 160 }
     has_secure_password
     has_one_attached :avatar
+    has_many :challenges
 end

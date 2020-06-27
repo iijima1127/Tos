@@ -5,7 +5,7 @@
         <% if @user.avatar.attached? %>
           <%= image_tag @user.avatar.variant(resize:'360x260').processed %>
         <% else %>
-          <%= image_tag ("no_image.png"),class:"avatar" %>
+          <%= image_tag ("no_image.png"), class:"avatar" %>
         <% end %>
       </div>
       <div class="card-body">
@@ -22,16 +22,13 @@
 <div class="row mt-4">
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-user-circle"></i>　プロフィール：</strong>
-    <p class="ml-4 mt-3"><button><%= link_to 'ユーザー編集', edit_user_path(@user), class: "link" %></button></p>
-    <p class="ml-4 mt-3"><button><%= link_to 'ユーザーリスト', users_path, class: "link" %></button></p>
+    <p class="ml-4 mt-3"><button class="btn btn-success"><%= link_to 'ユーザー編集', edit_user_path(@user), class: "user-link" %></button></p>
+    <p class="ml-4 mt-3"><button class="btn btn-success"><%= link_to 'ユーザーリスト', users_path, class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
-    <div class="card">
-        <div class="card-header">
-            <i class="fas fa-info-circle"></i> 
-        </div>
+    <div class="card ml-3">
         <div class="card-body">
-            <%= @user.profile %>
+        　　<%= simple_format(@user.profile) %>
         </div>
     </div>
   </div>
@@ -39,45 +36,10 @@
 <div class="row mt-4">　
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-running"></i>　　挑戦中：</strong>
+     <p class="ml-2 mt-3"><button class="btn btn-success"><%= link_to '新しい挑戦を追加する', new_challenge_path,class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
-    <form action="complete.html">
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-      <div class="row form-group">
-        <div class="col-sm-12">
-            <input type="text" class="form-control" name="company">
-        </div>
-      </div>
-    </form>
+    <%= render 'challenges/challenges', challenges: @challenges %>
   </div>
 </div>
 <footer class="last-foot">

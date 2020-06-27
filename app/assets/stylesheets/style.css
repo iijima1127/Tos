@@ -226,7 +226,7 @@
 }
 
 #usershow-card{
-	width:20rem;
+	width: 20rem;
 }
 
 #user-tr-p{
@@ -244,6 +244,6 @@
 	
 }
 
-.link-top-2{
+.user-link,.link-top-2{
 	color: white;
 }
