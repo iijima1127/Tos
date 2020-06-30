@@ -1,6 +1,11 @@
 class ChallengesController < ApplicationController
-  before_action :require_user_logged_in
-  before_action :correct_user, only: [:destroy]
+  before_action :require_user_logged_in, only: [:new,:create, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+  
+  def show
+    @challenge = Challenge.find(params[:id])
+    @episodes = @challenge.episodes.order(id: :desc).page(params[:page])
+  end
   
   def new
     @challenge = current_user.challenges.build
@@ -16,6 +21,21 @@ class ChallengesController < ApplicationController
       @challenges = @user.challenges.order(id: :desc).page(params[:page]).per(10)
       flash.now[:danger] = '新しい挑戦を追加できませんでした。'
       render template: "users/show"
+    end
+  end
+  
+  def edit
+    @challenge = Challenge.find(params[:id])
+  end
+  
+  def update
+    @challenge = Challenge.find(params[:id])
+    if @challenge.update(challenge_params)
+      flash[:success] = '挑戦内容は正常に更新されました'
+      redirect_to user_path(current_user)
+    else
+      flash.now[:danger] = '挑戦内容は更新されませんでした'
+      render :edit
     end
   end
 

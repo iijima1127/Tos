@@ -1,0 +1,18 @@
+<ul class="list-unstyled">
+  <% episodes.each do |episode| %>
+    <li>
+      <div class="card mt-3">
+        <div class="card-header">
+          <span class="text-muted">エピソード投稿日 &#058; <%= episode.created_at %></span>
+        </div>
+        <div class="card-body">
+         <p>取組 &#058;<%= episode.content %></p>
+         <p>変化 &#058; <%= episode.variation%></p>
+         <div class="userbutton-container">
+         </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate episodes %>
+</ul>

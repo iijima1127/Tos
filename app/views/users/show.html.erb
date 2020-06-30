@@ -10,12 +10,12 @@
       </div>
       <div class="card-body">
         <h5 class="card-title"><%= @user.name%></h5>
+        <%= render 'relationships/influence_button', user: @user %>
       </div>
     </div>
   </div>
   <div class="usertop-right">
-    <p id="user-tr-p"class="border rounded-circle border-dark"></p>
-    <h5 id="user-tr-h5" class="border-bottom">インフルエンス</h5>
+    <h5 id="user-tr-h5" class=" border-dark border-bottom"><span id="influence"><%= @count_influencers %></span>　インフルエンス</h5>
   </div>
 </div>
 

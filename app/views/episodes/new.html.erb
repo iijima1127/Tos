@@ -1,0 +1,19 @@
+<div class="text-center">
+  <h1>エピソードを追加</h1>
+</div>
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @episode, local: true) do |f| %>
+    <%= f.hidden_field :this_challenge_id, value: @episode.challenge.id %>
+        <div class="form-group">
+          <%= f.label :variation, '変化' %>
+          <%= f.text_field :variation, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :content, '今回の取組み' %>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+        <%= f.submit 'エピソードを追加', class: 'btn btn-success btn-block' %>
+    <% end %>
+  </div>
+</div>
