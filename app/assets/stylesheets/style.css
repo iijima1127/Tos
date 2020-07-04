@@ -58,12 +58,10 @@
 	border-style: none;
 }
 
-/*↓bootstrapテンプレから
-
-*/
+/*↓bootstrapテンプレから*/
 .page-section {
     padding: 8rem 0;
-    background-color: #dc5252;
+    background-color: #FF6633;
 }
 
 
@@ -74,9 +72,38 @@
 	margin-top: 40px;
 }
 
-.first-icon,.second-icon,.third-icon{
-  text-align: center;
+.second-head{
+	background-color: red;
 }
+/*↓bootstrapテンプレから画像と文字が半々の部分（showcase）*/
+
+#showcase-img-1{
+	background-image: url('start.jpg');
+}
+
+#showcase-img-2{
+	background-image: url('record.jpg');
+}
+
+#showcase-img-3{
+	background-image: url('share.jpg');
+}
+
+.showcase .showcase-text {
+  padding: 3rem;
+}
+
+.showcase .showcase-img {
+  min-height: 30rem;
+  background-size: cover;
+}
+
+@media (min-width: 768px) {
+  .showcase .showcase-text {
+    padding: 7rem;
+  }
+}
+
 
 .third-colum{
 	background-color: #f1f0f0;
@@ -87,7 +114,7 @@
 }
 
 .users{
-	background-color: #dc5252;
+	background-color: #FF6633;
 	color: white;
 	font-size: 1.2em;
 	font-weight: bold;
@@ -133,38 +160,6 @@
 
 .last-foot{
   border-top: 1px solid #f7f7f7;
-}
-
-.last-left p {
-  float: left;
-}
-
-.jbutton,.enbutton{
-	margin: 15px;
-	background-color: white;
-	border: 1px solid #f7f7f7;
-	font-size: 1.0em;
-	color: darkgrey;
-}
-
-.last-right{
-	margin-top: 20px;
-}
-
-.last-left{
-	margin-top: 20px;
-}
-
-.last-left a{
-	color: #C0C0C0;
-	font-size: 15px;
-	text-decoration: none;
-}
-
-.all-reserved{
-	color: #C0C0C0;
-	font-size: 15px;
-	margin-top: 0px;
 }
 
 /*↓ユーザーリストに関するCSS */
@@ -275,4 +270,9 @@
 
 #brown{
 	color: #996633;
+}
+/* ↓フッターアイコンのカラー指定↓*/
+.foot-icon {
+  color: #212529;
+  transition: all 0.2s;
 }
