@@ -1,0 +1,37 @@
+<div class="mt-5 text-center">
+  <h1>インフルエンサーベスト１０</h1>
+</div>
+<div class="mt-5 col-sm-6 offset-sm-3">
+  <% @users.each.with_index(1) do |user,i| %>
+    <div class="card mb-3" style="width:700px;">
+      <div class="row">
+        <div class="col-lg-3">
+          <% if user.avatar.attached? %>
+              <%= image_tag user.avatar.variant(combine_options:{resize:"133x107^",crop:"133x107+0+0",gravity: :center}).processed %>
+            <% else %>
+              <%= image_tag ("no_image.png"), class:"avatar" %>
+            <% end %>
+        </div>
+        <div class="col-lg-5">
+          <div class="card-body">
+            <% if i == 1%>
+              <h5 class="card-title"><i class="fas fa-crown"></i>  第<%= i %>位  &#058; <%= user.name %></h5>
+              <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+            <% elsif i==2 %>
+              <h5 class="card-title"><i class="fas fa-medal" id="silver"></i>  第<%= i %>位  &#058; <%= user.name %></h5>
+              <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+            <% elsif i==3 %>
+              <h5 class="card-title"><i class="fas fa-medal" id="brown"></i>  第<%= i %>位  &#058; <%= user.name %></h5>
+              <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+            <% else %>
+              <h5 class="card-title">第<%= i %>位  &#058; <%= user.name %></h5>
+              <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

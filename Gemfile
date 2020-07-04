@@ -59,3 +59,5 @@ gem 'kaminari'
 
 #画像変換
 gem 'image_processing'
+
+#検索機能

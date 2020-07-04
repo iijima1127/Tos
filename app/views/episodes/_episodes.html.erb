@@ -9,6 +9,9 @@
          <p>取組 &#058;<%= episode.content %></p>
          <p>変化 &#058; <%= episode.variation%></p>
          <div class="userbutton-container">
+           <% if current_user == episode.challenge.user %>
+          　<p><%= link_to "エピソードを削除", episode, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>
+         　<% end %>
          </div>
         </div>
       </div>

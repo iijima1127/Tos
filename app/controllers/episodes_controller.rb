@@ -1,5 +1,4 @@
 class EpisodesController < ApplicationController
-
   def new
     @episode = Challenge.find(params[:id]).episodes.build
   end
@@ -17,13 +16,11 @@ class EpisodesController < ApplicationController
     end
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def destroy
+    @episode = Episode.find(params[:id])
+    @episode.destroy
+    flash[:success] = "エピソードを削除しました"
+    redirect_back(fallback_location: root_path)
   end
   
   private
@@ -31,4 +28,5 @@ class EpisodesController < ApplicationController
   def episode_params
     params.require(:episode).permit(:variation, :content, :this_challenge_id)
   end
+  
 end

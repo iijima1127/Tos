@@ -46,6 +46,10 @@ class UsersController < ApplicationController
   def destory
   end
   
+  def rank
+    @users = User.find(Relationship.group(:influence_id).order('count(influence_id) desc').limit(10).pluck(:influence_id))
+  end
+  
   def influencers
     @user = User.find(params[:id])
     counts(@user)

@@ -5,7 +5,7 @@
     <div id="usercard" class=" card shadow" >
       <div class="card-img-top">
         <% if user.avatar.attached? %>
-          <%= image_tag user.avatar.variant(resize:'360x260').processed %>
+          <%= image_tag user.avatar.variant(combine_options:{resize:"318x244^",crop:"318x244+0+0",gravity: :center}).processed %>
         <% else %>
           <%= image_tag ("no_image.png"), class:"avatar" %>
         <% end %>
@@ -13,8 +13,8 @@
       <div class="card-body">
         <h5 class="card-title"><%= user.name %></h5>
         <div class="card-text">
-          <p>挑戦中:</p>
-          <p class="btn btn-light"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
+          <p>挑戦中: </p>
+          <p class="btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
         </div>
       </div>
     </div>

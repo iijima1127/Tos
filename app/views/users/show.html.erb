@@ -3,7 +3,7 @@
     <div id="usershow-card"class=" card shadow" >
       <div class="card-img-top">
         <% if @user.avatar.attached? %>
-          <%= image_tag @user.avatar.variant(resize:'360x260').processed %>
+          <%= image_tag @user.avatar.variant(combine_options:{resize:"318x244^",crop:"318x244+0+0",gravity: :center}).processed %>
         <% else %>
           <%= image_tag ("no_image.png"), class:"avatar" %>
         <% end %>
@@ -22,8 +22,8 @@
 <div class="row mt-4">
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-user-circle"></i>　プロフィール：</strong>
-    <p class="ml-4 mt-3"><button class="btn btn-success"><%= link_to 'ユーザー編集', edit_user_path(@user), class: "user-link" %></button></p>
-    <p class="ml-4 mt-3"><button class="btn btn-success"><%= link_to 'ユーザーリスト', users_path, class: "user-link" %></button></p>
+    <p class="ml-4 mt-3"><button class="btn btn-success btn-sm"><%= link_to 'ユーザー編集', edit_user_path(@user), class: "user-link" %></button></p>
+    <p class="ml-4 mt-3"><button class="btn btn-success btn-sm"><%= link_to 'ユーザーリスト', users_path, class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
     <div class="card ml-3">
@@ -36,7 +36,7 @@
 <div class="row mt-4">　
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-running"></i>　　挑戦中：</strong>
-     <p class="ml-2 mt-3"><button class="btn btn-success"><%= link_to '新しい挑戦を追加する', new_challenge_path,class: "user-link" %></button></p>
+     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '新しい挑戦を追加する', new_challenge_path,class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
     <%= render 'challenges/challenges', challenges: @challenges %>
