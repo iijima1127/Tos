@@ -27,7 +27,7 @@
 }
 
 .main-image{
-	height: 800px;
+	height: 750px;
 	background-image: url("onestep.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -218,6 +218,7 @@
 
 .usertop-right{
 	margin-top: 260px;
+	color: white;
 }
 
 #usershow-card{
@@ -271,8 +272,12 @@
 #brown{
 	color: #996633;
 }
-/* ↓フッターアイコンのカラー指定↓*/
+/* ↓フッターカラー指定↓*/
 .foot-icon {
   color: #212529;
   transition: all 0.2s;
+}
+
+.last-foot{
+	background-color: #FF6633;
 }
