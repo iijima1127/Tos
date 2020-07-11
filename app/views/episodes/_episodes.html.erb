@@ -3,11 +3,27 @@
     <li>
       <div class="card mt-3">
         <div class="card-header">
-          <span class="text-muted">エピソード投稿日 &#058; <%= episode.created_at %></span>
+          <span class="text-muted">エピソード投稿日 &#058; <%= episode.created_at.to_s(:datetime_jp) %></span>
         </div>
         <div class="card-body">
-         <p>取組 &#058;<%= episode.content %></p>
-         <p>変化 &#058; <%= episode.variation%></p>
+          <div class="content">
+           <p class=" border-bottom font-weight-bold">今回の取り組み</p>
+           <p><%= simple_format(episode.content) %></p>
+           <div>
+             <% if episode.images.attached? %>  
+              <%= image_tag episode.images.variant(combine_options:{resize:"300x300^",crop:"300x300.8+0+0",gravity: :center}).processed %>  
+             <% end %>  
+           </div>
+           <div>
+             <% if episode.clip.attached? %>  
+              <%= video_tag(url_for(episode.clip), controls:true, peload:"none", style:'width: 300px; height: 300px;') %> 
+             <% end %>  
+           </div>
+          </div>
+          <div class="variation">
+           <p class="border-bottom font-weight-bold">身に起きた変化</p>
+           <p><%= simple_format(episode.variation) %></p>
+          </div>
          <div class="userbutton-container">
            <% if current_user == episode.challenge.user %>
           　<p><%= link_to "エピソードを削除", episode, method: :delete, data: { confirm: "本当に削除してよろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>

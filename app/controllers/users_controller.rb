@@ -60,11 +60,11 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email,:profile,:avatar, :password, :password_confirmation)
   end
-  #↓途中　編集を特定のユーザーだけができるようにしたいけど
+
   def admin_user
-    @user = current_user.id
-    unless @user
-      redirect_to root_url
+    @user = User.find_by(id: params[:id])
+    unless @user == current_user
+      redirect_to user_path(current_user)
     end
   end
 end

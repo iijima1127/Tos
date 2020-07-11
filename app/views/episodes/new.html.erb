@@ -6,14 +6,61 @@
     <%= form_with(model: @episode, local: true) do |f| %>
     <%= f.hidden_field :this_challenge_id, value: @episode.challenge.id %>
         <div class="form-group">
-          <%= f.label :variation, '変化' %>
-          <%= f.text_field :variation, class: 'form-control' %>
-        </div>
-        <div class="form-group">
           <%= f.label :content, '今回の取組み' %>
           <%= f.text_area :content, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :images, "テスト画像" %>
+          <%= f.file_field :images, class: 'form-control'  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :clip, "テスト動画" %>
+          <%= f.file_field :clip, class: 'form-control'  %>
+        </div>
+        <div class="form-group">
+          <%= f.label :variation, '身に起きた変化' %>
+          <%= f.text_field :variation, class: 'form-control' %>
         </div>
         <%= f.submit 'エピソードを追加', class: 'btn btn-success btn-block' %>
     <% end %>
   </div>
+</div>
+<div class="wrapper">
+  <footer class="last-foot-persol mt-5">
+    <div class="text-center mt-3">    
+      <a class="ml-3 text-black-50"  href="/protocol">利用規約</a>
+      <a class="ml-2 text-black-50" href="/privacy">プライバシポリシー</a>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="#" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-center">Copyright &copy; 2020 easyma, inc All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </div>

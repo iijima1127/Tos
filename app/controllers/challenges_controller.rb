@@ -2,6 +2,17 @@ class ChallengesController < ApplicationController
   before_action :require_user_logged_in, only: [:new,:create, :edit, :update, :destroy]
   before_action :correct_user, only: [:edit, :update, :destroy]
   
+  def index
+    if params[:q] && params[:q].reject { |key, value| value.blank? }.present?
+      @q = Challenge.ransack(search_params, activated_true: true)
+      @title = "検索結果"
+    else
+      @q = Challenge.ransack(activated_true: true)
+      @title = "全ての挑戦"
+    end
+    @challenges = @q.result.page(params[:page]).per(10)
+  end
+  
   def show
     @challenge = Challenge.find(params[:id])
     @episodes = @challenge.episodes.order(id: :desc).page(params[:page])
@@ -20,7 +31,7 @@ class ChallengesController < ApplicationController
       @user = current_user
       @challenges = @user.challenges.order(id: :desc).page(params[:page]).per(10)
       flash.now[:danger] = '新しい挑戦を追加できませんでした。'
-      render template: "users/show"
+      render :new
     end
   end
   
@@ -56,5 +67,9 @@ class ChallengesController < ApplicationController
     unless @challenge
       redirect_to root_url
     end
+  end
+  
+  def search_params
+    params.require(:q).permit(:challenge_cont)
   end
 end

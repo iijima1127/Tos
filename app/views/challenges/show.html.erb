@@ -5,8 +5,8 @@
   <div class="col-md-8">
     <div class="card ml-3">
         <div class="card-body">
-          <h2 class="border-bottom">目標 &#058; <%= @challenge.goal%></h2>
-          <h2>挑戦 &#058;　<%= @challenge.challenge %></h2>
+          <h2 class="border-bottom font-weight-bold">目標 &#058; <%= @challenge.goal%></h2>
+          <h2 class="font-weight-bold">挑戦 &#058; <%= @challenge.challenge %></h2>
         </div>
     </div>
   </div>
@@ -15,7 +15,7 @@
   <div class="col-md-2 offset-md-1">
     <strong> エピソード一覧</strong>
      <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to 'エピソード追加', new_episode_path(@challenge), class: "user-link" %></button></p>
-     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '挑戦一覧へ', user_path(current_user), class: "user-link" %></button></p>
+     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '挑戦一覧へ',user_path(@challenge.user), class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
     <%= render 'episodes/episodes', episodes: @episodes %>

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create'
   delete 'logout', to: 'sessions#destroy'
   
+  
   get "signup", to: "users#new"
   get "influencer_ranking", to: "users#rank"
   resources :users, only: [:index, :show, :create, :edit, :update, :destroy] do
@@ -17,7 +18,7 @@ Rails.application.routes.draw do
       get :influencers
     end
   end
-  resources :challenges, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :challenges, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   resources :episodes, only: [:new, :create, :destroy]
   resources :relationships, only: [:create, :destroy]
 end

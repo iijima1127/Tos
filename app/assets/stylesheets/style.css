@@ -281,3 +281,22 @@
 .last-foot{
 	background-color: #FF6633;
 }
+
+.show-wrapper{
+	height: 600px;
+}
+
+/* ↓コンテンツ不足のフッター下部固定↓*/
+.wrapper{
+    min-height: 100vh;
+    position: relative;/*←相対位置*/
+    padding-bottom: 120px;/*←footerの高さ*/
+    box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+}
+
+.last-foot-persol{
+    width: 100%;
+    background-color: #FF6633;
+    position: absolute;
+    bottom: 0;
+}

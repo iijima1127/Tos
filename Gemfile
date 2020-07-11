@@ -61,3 +61,4 @@ gem 'kaminari'
 gem 'image_processing'
 
 #検索機能
+gem 'ransack'

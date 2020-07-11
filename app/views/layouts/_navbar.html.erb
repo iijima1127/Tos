@@ -5,20 +5,22 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav ml-auto my-2 my-lg-0">
             <% if logged_in?%>
-              <li class="nav-item"><%= link_to 'ユーザーリスト', users_path, class: 'nav-link' %></li>
-              <li class="nav-item"><%= link_to 'ランキング', influencer_ranking_path, class: "nav-link" %></li>
+              <li class="nav-item font-weight-bold"><%= link_to 'ユーザーリスト', users_path, class: 'nav-link' %></li>
+              <li class="nav-item font-weight-bold"><%= link_to 'ランキング', influencer_ranking_path, class: "nav-link" %></li>
+              <li class="nav-item font-weight-bold"><%= link_to '挑戦を探す', challenges_path, class: 'nav-link' %></li>
               <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
+                <a href="#" class="nav-link dropdown-toggle font-weight-bold" data-toggle="dropdown"><%= current_user.name %></a>
                 <ul class="dropdown-menu dropdown-menu-right">
-                  <li class="dropdown-item"><%= link_to 'マイプロフィール', user_path(current_user), class: "link-navuser" %></li>
-                  <li class="dropdown-item"><%= link_to '挑戦を追加', new_challenge_path, class: "link-navuser" %></li>
+                  <li class="dropdown-item font-weight-bold"><%= link_to 'マイプロフィール', user_path(current_user), class: "link-navuser" %></li>
+                  <li class="dropdown-item font-weight-bold"><%= link_to '挑戦を追加', new_challenge_path, class: "link-navuser" %></li>
                   <li class="dropdown-divider"></li>
-                  <li class="dropdown-item"><%= link_to 'ログアウト', logout_path, method: :delete, class: "link-navuser" %></li>
+                  <li class="dropdown-item font-weight-bold"><%= link_to 'ログアウト', logout_path, method: :delete, class: "link-navuser" %></li>
                 </ul>
               </li>
             <% else %>
               <li class="nav-item font-weight-bold"><%= link_to '新規登録', signup_path, class: 'nav-link' %></li>
               <li class="nav-item font-weight-bold"><%= link_to 'ログイン', login_path, class: 'nav-link' %></li>
+              <li class="nav-item font-weight-bold"><%= link_to '挑戦を探す', challenges_path, class: 'nav-link' %></li>
             <% end %>
           </ul>
       </div>

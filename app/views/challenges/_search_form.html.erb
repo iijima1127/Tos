@@ -1,0 +1,11 @@
+<div class="search_box mt-3">
+<%= search_form_for @q do |f| %>
+  <%= f.label :challenge_cont, "キーワード検索" %>
+  <div class="input-group">
+    <%= f.text_field :challenge_cont, placeholder: "キーワードを入力してください", class: 'form-control' %>
+    <span class="input-group-btn">
+     <%= f.submit '検索', class: "btn btn-primary" %>
+    </span>
+  </div>
+<% end %>
+</div>

@@ -7,7 +7,7 @@ class User < ApplicationRecord
     validates :profile, length: { maximum: 160 }
     has_secure_password
     has_one_attached :avatar
-    has_many :challenges
+    has_many :challenges, inverse_of: :user
     has_many :relationships
     has_many :influences, through: :relationships, source: :influence
     has_many :reverses_of_relationship, class_name: "Relationship", foreign_key: 'influence_id'

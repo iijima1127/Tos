@@ -18,8 +18,7 @@
     <h5 id="user-tr-h5" class=" border-white border-bottom"><span id="influence"><%= @count_influencers %></span>　インフルエンス</h5>
   </div>
 </div>
-
-<div class="row mt-4">
+<div class="row py-5">
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-user-circle"></i>　プロフィール：</strong>
     <p class="ml-4 mt-3"><button class="btn btn-success btn-sm"><%= link_to 'ユーザー編集', edit_user_path(@user), class: "user-link" %></button></p>
@@ -33,7 +32,7 @@
     </div>
   </div>
 </div>
-<div class="row mt-4">　
+<div class="row mt-4 mb-5">　
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-running"></i>　　挑戦中：</strong>
      <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '新しい挑戦を追加する', new_challenge_path,class: "user-link" %></button></p>

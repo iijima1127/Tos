@@ -1,4 +1,5 @@
 class EpisodesController < ApplicationController
+
   def new
     @episode = Challenge.find(params[:id]).episodes.build
   end
@@ -7,12 +8,12 @@ class EpisodesController < ApplicationController
     @episode = Challenge.find(episode_params[:this_challenge_id]).episodes.build(episode_params)
     if @episode.save
       flash[:success] = '新しいエピソードを追加しました'
-      redirect_to user_path(current_user)
+      redirect_to challenge_path(Challenge.find(episode_params[:this_challenge_id]))
     else
       @user = current_user
       @challenges = @user.challenges.order(id: :desc).page(params[:page]).per(10)
       flash.now[:danger] = '新しいエピソードを追加できませんでした。'
-      render template: "challenges/show"
+      render :new
     end
   end
 
@@ -26,7 +27,7 @@ class EpisodesController < ApplicationController
   private
   
   def episode_params
-    params.require(:episode).permit(:variation, :content, :this_challenge_id)
+    params.require(:episode).permit(:variation, :content, :this_challenge_id, :clip, :images)
   end
   
 end
