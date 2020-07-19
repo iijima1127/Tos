@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root to: 'toppages#index'
+  get "protocol",to:"toppages#protocol"
+  get "privacy",to:"toppages#privacy"
   
   get 'episodes/:id/new', to: 'episodes#new', as: 'new_episode'
   post 'episodes/:id/create', to: 'episodes#cre', as: 'episode'
