@@ -1,7 +1,7 @@
 <div class="text-center mt-5">
   <h1>ユーザー編集</h1>
 </div>
-<div class="row">
+<div class="row mb-5">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @user, local: true) do |f| %>
       <div class="form-group">
@@ -34,7 +34,7 @@
     <%= link_to 'プロフィールトップへ', user_path(@user) %>
   </div>
 </div>
-<footer class="last-foot mt-5">
+<footer class="last-foot ">
   <div class="text-center mt-3">    
     <a class="ml-3 text-black-50"  href="/protocol">利用規約</a>
     <a class="ml-2 text-black-50" href="/privacy">プライバシポリシー</a>
@@ -43,7 +43,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <ul class="list-inline text-center">
         <li class="list-inline-item">
-          <a href="#" class="foot-icon">
+          <a href="" class="foot-icon">
             <span class="fa-stack fa-lg">
               <i class="fas fa-circle fa-stack-2x"></i>
               <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
@@ -71,4 +71,3 @@
     </div>
   </div>
 </footer>
-

@@ -1,5 +1,5 @@
 <div class="text-center mt-5">
-  <h1>挑戦したいことを探す</h1>
+  <h1>挑戦を探す</h1>
 </div>
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
@@ -13,14 +13,14 @@
         <li>
           <div class="card mt-3">
             <div class="card-header">
-              <span class="text-muted">挑戦スタート &#058; <%= challenge.created_at.to_s(:datetime_jp) %></span>
+              <span class="text-muted"> <%= challenge.created_at.to_s(:datetime_jp) %> &#058; <span class="font-weight-bold text-danger"><%= challenge.user.name%></span>が挑戦開始!</span>
             </div>
             <div class="card-body">
               <p class="font-weight-bold">目標 &#058;<%= challenge.goal %></p>
               <p class="font-weight-bold">挑戦内容 &#058; <%= challenge.challenge %></p>
               <div class="userbutton-container">
-                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "エピソードを見る", challenge_path(challenge), class: "link" %></button></p>
-                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(challenge.user), class: "link" %></button></p>
+                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "エピソード一覧", challenge_path(challenge), class: "link" %></button></p>
+                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "プロフィール", user_path(challenge.user), class: "link" %></button></p>
                 <% if current_user == challenge.user %>
                   <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "挑戦の更新", edit_challenge_path(challenge), class: "link" %></button></p>
                   <p class="ml-2"><%= link_to "この挑戦を諦める", challenge, method: :delete, data: { confirm: "エピソードも消えてしまいます。本当によろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>
@@ -45,7 +45,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <ul class="list-inline text-center">
         <li class="list-inline-item">
-          <a href="#" class="foot-icon">
+          <a href="https://twitter.com/Tos42263175" class="foot-icon">
             <span class="fa-stack fa-lg">
               <i class="fas fa-circle fa-stack-2x"></i>
               <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>

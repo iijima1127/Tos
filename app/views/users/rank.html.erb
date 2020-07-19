@@ -1,15 +1,15 @@
-<div class="mt-5 text-center">
-  <h1>インフルエンサーベスト１０</h1>
+<div class="mt-5 text-center" id="rank">
+  <h1>ベストインフルエンサー</h1>
 </div>
-<div class="mt-4 col-sm-6 offset-sm-3">
+<div class="py-4 col-sm-6 offset-sm-3">
   <% @users.each.with_index(1) do |user,i| %>
-    <div class="card mb-3" style="width:700px;">
+    <div class="card mb-3" >
       <div class="row">
         <div class="col-lg-3">
           <% if user.avatar.attached? %>
               <%= image_tag user.avatar.variant(combine_options:{resize:"133x107^",crop:"133x107+0+0",gravity: :center}).processed %>
             <% else %>
-              <%= image_tag ("no_image.png"), class:"avatar" %>
+              <%= image_tag ("no_image.png"), class:"avatar",style:"width:133px; height:107;" %>
             <% end %>
         </div>
         <div class="col-lg-5">
@@ -33,7 +33,7 @@
     </div>
   <% end %>
 </div>
-<footer class="last-foot mt-5">
+<footer class="last-foot ">
   <div class="text-center mt-3">    
     <a class="ml-3 text-black-50"  href="/protocol">利用規約</a>
     <a class="ml-2 text-black-50" href="/privacy">プライバシポリシー</a>
@@ -42,7 +42,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <ul class="list-inline text-center">
         <li class="list-inline-item">
-          <a href="#" class="foot-icon">
+          <a href="" class="foot-icon">
             <span class="fa-stack fa-lg">
               <i class="fas fa-circle fa-stack-2x"></i>
               <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>

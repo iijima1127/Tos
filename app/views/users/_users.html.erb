@@ -1,21 +1,21 @@
 <% if users.any? %>
-<div class="row mt-5">
+<div class="row">
   <% users.each do |user| %>
-  <div class="col-md-3 mt-4">
-    <div id="usercard" class=" card shadow" >
-      <div class="card-img-top">
-        <% if user.avatar.attached? %>
-          <%= image_tag user.avatar.variant(combine_options:{resize:"318x244.8^",crop:"318x244.8+0+0",gravity: :center}).processed %>
-        <% else %>
-          <%= image_tag ("no_image.png"), class:"avatar" %>
-        <% end %>
-      </div>
+  <div class="col-md-3">
+    <div class="card mt-3 mb-4 shadow-sm">
       <div class="card-body">
-        <h5 class="card-title"><%= user.name %></h5>
+        <% if user.avatar.attached? %>
+        <%= image_tag user.avatar.variant(combine_options:{resize:"300x300^",crop:"300x300+0+0",gravity: :center}).processed,class:"card-img" %>
+        <%# image_tag user.avatar, class:"card-img" %>
+      <% else %>
+        <%# image_tag ("no_image.png"), class:"avatar", style:"width:300px; height:300px;"%>
+        <%= image_tag ("no_image.png"), class:"card-img"%>
+      <% end %>
+        <h5 class="card-title mt-2"><%= user.name %></h5>
         <div class="card-text">
           <% if user.challenges.first != nil %>
-           <p>目標: <%= user.challenges.first.goal %></p>
-           <p>挑戦中: <%= user.challenges.first.challenge %> etc...</p>
+           <p>目標: <%= user.challenges.first.goal.truncate(5) %></p>
+           <p>挑戦中: <%= user.challenges.first.challenge.truncate(5) %></p>
           <% else %>
            <p>目標：未設定</p>
            <p>挑戦中：未挑戦</p>
@@ -25,8 +25,7 @@
       </div>
     </div>
   </div>
-<% end %>
+  <% end %>
 </div>
 <%= paginate users %>
 <% end %>
-  

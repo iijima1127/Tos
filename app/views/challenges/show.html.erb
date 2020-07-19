@@ -14,10 +14,51 @@
 <div class="row mt-4">　
   <div class="col-md-2 offset-md-1">
     <strong> エピソード一覧</strong>
+    <% if current_user == @challenge.user %>
      <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to 'エピソード追加', new_episode_path(@challenge), class: "user-link" %></button></p>
-     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '挑戦一覧へ',user_path(@challenge.user), class: "user-link" %></button></p>
+    <% end %>
+    <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '挑戦一覧へ',user_path(@challenge.user), class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
     <%= render 'episodes/episodes', episodes: @episodes %>
   </div>
+</div>
+<div class="wrapper">
+  <footer class="last-foot-persol mt-5">
+    <div class="text-center mt-3">    
+      <a class="ml-3 text-black-50"  href="/protocol">利用規約</a>
+      <a class="ml-2 text-black-50" href="/privacy">プライバシポリシー</a>
+    </div>
+    <div class="row mt-2">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <ul class="list-inline text-center">
+          <li class="list-inline-item">
+            <a href="https://twitter.com/Tos42263175" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a href="#" class="foot-icon">
+              <span class="fa-stack fa-lg">
+                <i class="fas fa-circle fa-stack-2x"></i>
+                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+            </a>
+          </li>
+        </ul>
+        <p class="copyright text-center">Copyright &copy; 2020 easyma, inc All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 </div>

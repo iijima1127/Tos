@@ -1,64 +1,129 @@
-/*↓トップページに関するCSS */
+/*全ページの左右の余白を削除するため*/
 .container-fluid{
 	padding:0;
 }
 
-/*↓挑戦検索*/
-.sform{
-	display: flex;
-}
-
-.sbox{
-	width: 400px;
-	height: 45px;
-	border: 2px solid #f5f5f5;
-	border-left: 0;
-}
-
-.sbutton{
-	background-color: white;
-	border: 2px solid #f5f5f5;
-  　border-right: 0;
-  　margin-right: 0;
-}
-
-.main-image{
-	clear: both;
-}
-
-.main-image{
-	height: 750px;
+/*toppage index*/
+#main-jumbo{
+	width:100%;
+	height: 0;
+	padding-top: 60%;
+	position:relative;
 	background-image: url("onestep.jpg");
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover; 
+	margin-bottom:0;
 }
 
-.main-image h1{
-	font-size: 100px;
+.container{
+	position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 100%;
+}
+#main-jumbo h1{
 	color: white;
-  　font-weight: bold;
-	padding: 150px 0 0 150px;
 }
 
-.main-p{
-	font-size: 30px;
+#main-jumbo p{
 	color: white;
-	padding-left: 150px;
 }
 
-.mainbutton{
-	margin-left: 150px;
-	margin-top: 15px;
+#main-jumbobutton{
 	color: dimgrey;
 	font-size: 1.0em;
 	font-weight: bold;
 	background-color: #f5f5f5;
 	padding: 15px 20px;
 	border-radius: 5px;
-	border-style: none;
+	border-style: none;	
 }
 
-/*↓bootstrapテンプレから*/
+@media (min-width: 992px) {
+ #main-jumbo h1 {
+   font-size: 6.0rem;
+ }
+ #main-jumbo p{
+ 	font-size:3.0rem;
+ }
+ #main-jumbobutton{
+ 	font-size:1.0rem;
+ }
+}
+
+@media (max-width: 991.98px) {
+
+ #main-jumbo h1 {
+   font-size: 4.0rem;
+ }
+ #main-jumbo p{
+ 	font-size:2.5rem;
+ }
+ #main-jumbobutton{
+ 	font-size:0.5rem;
+ }
+}
+
+@media (max-width: 767.98px) {
+
+ #main-jumbo h1 {
+   font-size: 3.0rem;
+ }
+ #main-jumbo p{
+ 	font-size:1.5rem;
+ }
+ #main-jumbobutton{
+ 	font-size:0.5rem;
+ }
+}
+
+@media (max-width: 575.98px) {
+
+ #main-jumbo h1 {
+   font-size: 2.0rem;
+ }
+ #main-jumbo p{
+ 	font-size:1.8rem;
+ }
+ #main-jumbobutton{
+ 	font-size:0.5rem;
+ 	padding:5px 5px;
+ }
+}
+
+@media (max-width: 415.98px) {
+ .container{
+	margin-top:-2rem;
+}
+ #main-jumbo h1 {
+   font-size: 1rem;
+ }
+ #main-jumbo p{
+ 	font-size:1rem;
+ }
+ #main-jumbobutton{
+ 	font-size:0.1rem;
+ 	padding:5px 5px;
+ }
+}
+
+@media (max-width: 375.98px) {
+.container{
+	margin-top:-2rem;
+}
+ #main-jumbo h1 {
+   font-size: 1rem;
+ }
+ #main-jumbo p{
+ 	font-size:1rem;
+ }
+ #main-jumbobutton{
+ 	font-size:0.1rem;
+ 	padding:5px 5px;
+ }
+}
+
+/*toppage tos解説部分*/
 .page-section {
     padding: 8rem 0;
     background-color: #FF6633;
@@ -75,7 +140,8 @@
 .second-head{
 	background-color: red;
 }
-/*↓bootstrapテンプレから画像と文字が半々の部分（showcase）*/
+
+/*toppage画像と文字が半々の部分（showcase）*/
 
 #showcase-img-1{
 	background-image: url('start.jpg');
@@ -104,13 +170,13 @@
   }
 }
 
-
+/*toppage　他ユーザーリスト、挑戦を探す*/
 .third-colum{
 	background-color: #f1f0f0;
 	text-align: center;
 	color:#6a6a6a;
 	width: 100%;
-	height: 400px;
+	height: 460px;
 }
 
 .users{
@@ -124,40 +190,7 @@
 	margin-top: 15px;
 }
 
-.user2 a{
-	color: #f5f5f5;
-}
-
-.last-colum-all{
-  display: flex;
-  justify-content: center;
-}
-
-.last-colum-all li{
-  list-style-type: none;
-}
-
-.last-colum-all li a{
-  font-size: 14px;
-  font-weight: bold;
-  color: #C0C0C0;
-}
-
-.icons a { 
-  font-size: 20px;
-  color: #c0c0c0;
-  padding-right: 10px;
-}
-
-.last-colum1,.last-colum2,.last-colum3,.last-colum4{
-	margin: 20px;
-}
-
-
-.icons{
-	margin: 30px 0 0 30px;
-}
-
+/*↓フッターCSS */
 .last-foot{
   border-top: 1px solid #f7f7f7;
 }
@@ -175,13 +208,99 @@
 	color: white;
 }
 
-
-.users-image{
-	width: 100%;
-	height: 800px;
+#users-jumbo{
+	width:100%;
+	height: 0;
+	padding-top: 55%;
+	position:relative;
 	background-image: url("users.jpg");
 	background-repeat: no-repeat;
 	background-size: cover; 
+}
+
+.container{
+	position: absolute;
+    top: 30%;
+    left: 10%;
+    width: 100%;
+}
+
+#users-jumbo h1{
+	color: white;
+}
+
+#users-jumbo p{
+	color: white;
+}
+
+#users-jumbobutton{
+	color: dimgrey;
+	font-size: 1.0em;
+	font-weight: bold;
+	background-color: #f5f5f5;
+	padding: 15px 20px;
+	border-radius: 5px;
+	border-style: none;	
+}
+
+@media (min-width: 992px) {
+ #users-jumbo h1 {
+   font-size: 2.8rem;
+ }
+ #users-jumbo p{
+ 	font-size:1.8rem;
+ }
+ #users-jumbobutton{
+ 	font-size:1.0rem;
+ }
+}
+
+@media (max-width: 991.98px) {
+ #users-jumbo h1 {
+   font-size: 2.0rem;
+ }
+ #users-jumbo p{
+ 	font-size:1.2rem;
+ }
+ #users-jumbobutton{
+ 	font-size:0.5rem;
+ }
+}
+
+@media (max-width: 767.98px) {
+ #users-jumbo h1,p {
+   font-size: 1.5rem;
+ }
+}
+
+@media (max-width: 575.98px) {
+ #users-jumbo h1 {
+   font-size: 1.0rem;
+ }
+ #users-jumbo p{
+ 	font-size:0.8rem;
+ }
+ #users-jumbobutton{
+ 	font-size:0.1rem;
+ 	padding:5px 5px;
+ }
+}
+
+@media (max-width: 375.98px) {
+ #users-jumbo h1 {
+   font-size: 0.8rem;
+ }
+ #users-jumbo p{
+ 	font-size:0.6rem;
+ }
+ #users-jumbobutton{
+ 	font-size:0.1rem;
+ 	padding:5px 5px;
+ }
+ 
+ #rank h1{
+  font-size:30px;
+ }
 }
 
 #usercard{
@@ -206,33 +325,8 @@
 .user-top{
 	display: flex;
 	width: 100%;
-	height: 550px;
-	background-image: url("user-show.jpg");
-	background-repeat: no-repeat;
-	background-size: cover; 
-}
-
-.usertop-left{
-	margin: 100px 0 0 100px;
-}
-
-.usertop-right{
-	margin-top: 260px;
-	color: white;
-}
-
-#usershow-card{
-	width: 20rem;
-}
-
-#user-tr-p{
-	margin-top: 50px;
-	margin-left: 70px;
-}
-
-#user-tr-h5{
-	margin-left:50px;
-	margin-top: 130px;
+	height: 470px;
+ background-color:#FB6634;
 }
 
 /* ↓link_to文字色変更のため*/
@@ -254,7 +348,6 @@
 #influence{
 	font-size: 50px;
 }
-
 
 .card-img-top {
     width: 100%;
@@ -299,4 +392,58 @@
     background-color: #FF6633;
     position: absolute;
     bottom: 0;
+}
+
+/*レスポンシブスマホ対応*/
+
+@media (max-width: 415.98px) {
+ #rank h1{
+  font-size:25px;
+ }
+ 
+ #about h2,p{
+  font-size:1rem;
+ }
+ 
+ .showcase h2{
+  font-size:1.3rem;
+ }
+ 
+ .showcase p{
+  font-size:1rem;
+ }
+ 
+ .fa-users{
+  font-size:1.5rem;
+ }
+ 
+ .third,.users{
+  font-size:0.8rem;
+ }
+}
+
+@media (max-width: 770.98px) {
+ #rank h1{
+  font-size:25px;
+ }
+ 
+ #about h2,p{
+  font-size:1rem;
+ }
+ 
+ .showcase h2{
+  font-size:1.3rem;
+ }
+ 
+ .showcase p{
+  font-size:1rem;
+ }
+ 
+ .fa-users{
+  font-size:1.5rem;
+ }
+ 
+ .third,.users{
+  font-size:0.8rem;
+ }
 }
