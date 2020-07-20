@@ -430,6 +430,10 @@
  .influencer h2{
   font-size:1.5rem;
  }
+ .showcase .showcase-img {
+  min-height: 15rem;
+  background-size: cover;
+}
 }
 
 @media (max-width: 770.98px) {
