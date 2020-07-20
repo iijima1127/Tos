@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :require_user_logged_in, only: [:edit, :update]
-  before_action :admin_user, only: [:edit, :update]
+  before_action :admin_user, only: [:edit, :update,:destroy]
   
   def index
     @users = User.order(id: :desc).page(params[:page]).per(24)
@@ -43,7 +43,11 @@ class UsersController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    flash[:success] = 'Tos!!を退会しました'
+    redirect_to :root
   end
   
   def rank

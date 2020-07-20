@@ -15,7 +15,7 @@ class ChallengesController < ApplicationController
   
   def show
     @challenge = Challenge.find(params[:id])
-    @episodes = @challenge.episodes.order(id: :desc).page(params[:page])
+    @episodes = @challenge.episodes.order(id: :desc).page(params[:page]).per(10)
   end
   
   def new

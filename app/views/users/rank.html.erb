@@ -1,5 +1,5 @@
 <div class="mt-5 text-center" id="rank">
-  <h1>ベストインフルエンサー</h1>
+  <h1>影響力のある挑戦者10</h1>
 </div>
 <div class="py-4 col-sm-6 offset-sm-3">
   <% @users.each.with_index(1) do |user,i| %>
@@ -25,6 +25,7 @@
               <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
             <% else %>
               <h5 class="card-title">第<%= i %>位  &#058; <%= user.name %></h5>
+              <%= @count_influencers %>
               <p class="card-text btn btn-light btn-sm"><%= link_to "プロフィールへ", user_path(user), class: "link" %></p>
             <% end %>
           </div>
