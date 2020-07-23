@@ -62,3 +62,8 @@ gem 'image_processing'
 
 #検索機能
 gem 'ransack'
+
+#heroku対応
+group :production do
+  gem 'pg', '>= 0.18', '< 2.0'
+end
