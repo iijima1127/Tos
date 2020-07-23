@@ -42,7 +42,7 @@
 <div class="row mt-4 mb-5">　
   <div class="col-md-2 offset-md-1">
     <strong><i class="fas fa-running"></i>　　挑戦中：</strong>
-     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '新しい挑戦を追加する', new_challenge_path,class: "user-link" %></button></p>
+     <p class="ml-2 mt-3"><button class="btn btn-success btn-sm"><%= link_to '挑戦を追加', new_challenge_path,class: "user-link" %></button></p>
   </div>
   <div class="col-md-8">
     <%= render 'challenges/challenges', challenges: @challenges %>

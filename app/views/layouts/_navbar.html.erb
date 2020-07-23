@@ -12,7 +12,7 @@
                 <a href="#" class="nav-link dropdown-toggle font-weight-bold" data-toggle="dropdown"><%= current_user.name %></a>
                 <ul class="dropdown-menu dropdown-menu-right">
                   <li class="dropdown-item font-weight-bold"><%= link_to 'マイプロフィール', user_path(current_user), class: "link-navuser" %></li>
-                  <li class="dropdown-item font-weight-bold"><%= link_to '新しい挑戦を追加', new_challenge_path, class: "link-navuser" %></li>
+                  <li class="dropdown-item font-weight-bold"><%= link_to '挑戦を追加', new_challenge_path, class: "link-navuser" %></li>
                   <li class="dropdown-divider"></li>
                   <li class="dropdown-item font-weight-bold"><%= link_to 'ログアウト', logout_path, method: :delete, class: "link-navuser" %></li>
                   <li class="dropdown-item font-weight-bold"><%= link_to "退会",user_path(current_user.id), class: "destroy-users",method: :delete, data: { confirm: "全てのデータが消えてしまいます。本当に退会しますか？" } %></li>
