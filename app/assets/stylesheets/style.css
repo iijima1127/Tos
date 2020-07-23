@@ -470,3 +470,14 @@
   font-size:1.5rem;
  }
 }
+
+@media (max-width: 769px) {
+ .fa-users{
+  font-size:3rem;
+ }
+ 
+ .third,.users{
+  font-size:1.1rem;
+ }
+
+}
