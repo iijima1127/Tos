@@ -67,3 +67,6 @@ gem 'ransack'
 group :production do
   gem 'pg', '>= 0.18', '< 2.0'
 end
+
+#画像アップロード　→　amazon S3(heroku対応)
+gem "aws-sdk-s3", require: false
