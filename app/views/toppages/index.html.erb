@@ -1,8 +1,13 @@
 <div class="jumbotron jumbotron-fluid" id="main-jumbo">
   <div class="container">
+  <% if logged_in? %>
+    <h1 class="display-4 mt-5 font-weight-bold">Try One Step!!</h1>
+      <p class="lead mt-3 font-weight-bold">行動した分だけ人生が変わる。</p>
+  <%else%>
     <h1 class="display-4 mt-5 font-weight-bold">Try One Step!!</h1>
       <p class="lead mt-3 font-weight-bold">行動した分だけ人生が変わる。</p>
       <button id="main-jumbobutton"class="btn btn-light" type="submit"><%= link_to "一歩踏み出す", signup_path, class: "link-top-1" %></button>
+  <%end%>
   </div>
 </div>
 <section class="page-section" id="about">
