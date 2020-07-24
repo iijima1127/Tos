@@ -60,7 +60,7 @@
  	font-size:2.5rem;
  }
  #main-jumbobutton{
- 	font-size:0.5rem;
+ 	font-size:1rem;
  }
 }
 
@@ -73,7 +73,7 @@
  	font-size:1.5rem;
  }
  #main-jumbobutton{
- 	font-size:0.5rem;
+ 	font-size:1rem;
  }
 }
 
@@ -86,7 +86,7 @@
  	font-size:1.8rem;
  }
  #main-jumbobutton{
- 	font-size:0.5rem;
+ 	font-size:1rem;
  	padding:5px 5px;
  }
 }
@@ -102,7 +102,7 @@
  	font-size:1rem;
  }
  #main-jumbobutton{
- 	font-size:0.1rem;
+ 	font-size:1rem;
  	padding:5px 5px;
  }
 }
@@ -235,7 +235,7 @@
 
 #users-jumbobutton{
 	color: dimgrey;
-	font-size: 1.0em;
+	font-size: 1vw;
 	font-weight: bold;
 	background-color: #f5f5f5;
 	padding: 15px 20px;
@@ -251,7 +251,7 @@
  	font-size:1.8rem;
  }
  #users-jumbobutton{
- 	font-size:1.0rem;
+ 	font-size:1.0vw;
  }
 }
 
@@ -263,7 +263,7 @@
  	font-size:1.2rem;
  }
  #users-jumbobutton{
- 	font-size:0.5rem;
+ 	font-size:1vw;
  }
 }
 
@@ -281,7 +281,7 @@
  	font-size:0.8rem;
  }
  #users-jumbobutton{
- 	font-size:0.1rem;
+ 	font-size:1vw;
  	padding:5px 5px;
  }
 }
@@ -294,7 +294,7 @@
  	font-size:0.6rem;
  }
  #users-jumbobutton{
- 	font-size:1rem;
+ 	font-size:1vw;
  	padding:5px 5px;
  }
  
