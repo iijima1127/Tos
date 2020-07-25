@@ -8,29 +8,42 @@
     </div>
   </div>
   <div class="col-sm-6 offset-sm-3">
-    <ul class="list-unstyled">
-      <% @challenges.each do |challenge|%>
-        <li>
-          <div class="card mt-3">
-            <div class="card-header">
-              <span class="text-muted"> <%= challenge.created_at.to_s(:datetime_jp) %> &#058; <span class="font-weight-bold text-danger"><%= challenge.user.name%></span>さんが挑戦開始!</span>
-            </div>
-            <div class="card-body">
-              <p class="font-weight-bold">目標 &#058;<%= challenge.goal %></p>
-              <p class="font-weight-bold">挑戦内容 &#058; <%= challenge.challenge %></p>
-              <div class="userbutton-container">
-                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "エピソード一覧", challenge_path(challenge), class: "link" %></button></p>
-                <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "プロフィール", user_path(challenge.user), class: "link" %></button></p>
-                <% if current_user == challenge.user %>
-                  <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "挑戦の更新", edit_challenge_path(challenge), class: "link" %></button></p>
-                  <p class="ml-2"><%= link_to "この挑戦を諦める", challenge, method: :delete, data: { confirm: "エピソードも消えてしまいます。本当によろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>
-                <% end %>
+    <% unless @challenges.empty? %>
+      <ul class="list-unstyled">
+        <% @challenges.each do |challenge|%>
+          <li>
+            <div class="card mt-3">
+              <div class="card-header">
+                <span class="text-muted"> <%= challenge.created_at.to_s(:datetime_jp) %> &#058; <span class="font-weight-bold text-danger"><%= challenge.user.name%></span>さんが挑戦開始!</span>
+              </div>
+              <div class="card-body">
+                <p class="font-weight-bold">目標 &#058;<%= challenge.goal %></p>
+                <p class="font-weight-bold">挑戦内容 &#058; <%= challenge.challenge %></p>
+                <div class="userbutton-container">
+                  <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "エピソード一覧", challenge_path(challenge), class: "link" %></button></p>
+                  <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "プロフィール", user_path(challenge.user), class: "link" %></button></p>
+                  <% if current_user == challenge.user %>
+                    <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "挑戦の更新", edit_challenge_path(challenge), class: "link" %></button></p>
+                    <p class="ml-2"><%= link_to "この挑戦を諦める", challenge, method: :delete, data: { confirm: "エピソードも消えてしまいます。本当によろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>
+                  <% end %>
+                </div>
               </div>
             </div>
-          </div>
-        </li>
-     <% end %>
-    </ul>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <div class="mt-5">
+        <h3 class="font-weight-bold">検索結果が見つかりませんでした。</h3>
+        <h5 class="mt-5">検索のヒント</h5>
+        <ul>
+          <li>キーワードに誤字・脱字がないか確認します。</li>
+          <li>別のキーワードを試してみます。</li>
+          <li>もっと一般的なキーワードに変えてみます。</li>
+          <li>キーワードの数を減らしてみます。</li>
+        </ul>
+      </div>
+    <% end %>
     <div class="py-3">
       <%= paginate @challenges %>
     </div>
