@@ -198,7 +198,6 @@
 /*↓ユーザーリストに関するCSS */
 .users-image h1 {
 	padding-top: 300px;
-	padding-left: 150px;
 	font-size:80px;
 	color: white;
 }
@@ -398,12 +397,6 @@
 .destroy-users{
   font-size: 12px;
   color: red;
-}
-
-/*エピソード投稿画像と動画の*/
-.episodeimage{
- width:100%;
- height:auto;
 }
 
 /*レスポンシブスマホ対応*/
