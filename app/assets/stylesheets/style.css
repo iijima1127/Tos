@@ -198,6 +198,7 @@
 /*↓ユーザーリストに関するCSS */
 .users-image h1 {
 	padding-top: 300px;
+	padding-left: 150px;
 	font-size:80px;
 	color: white;
 }
