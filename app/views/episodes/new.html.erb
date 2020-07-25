@@ -4,6 +4,7 @@
 <div class="row">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @episode, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
     <%= f.hidden_field :this_challenge_id, value: @episode.challenge.id %>
         <div class="form-group">
           <%= f.label :content, '今回の取組み' %>
