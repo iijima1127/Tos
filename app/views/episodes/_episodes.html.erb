@@ -11,7 +11,7 @@
            <p><%= simple_format(episode.content) %></p>
            <div>
              <% if episode.images.attached? %>  
-              <%= image_tag episode.images, class: "img-fluid" %>  
+              <%= image_tag episode.images, class: "episodeimage" %>  
              <% end %>  
            </div>
            <div>

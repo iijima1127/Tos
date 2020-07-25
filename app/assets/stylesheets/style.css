@@ -400,6 +400,11 @@
   color: red;
 }
 
+/*エピソード投稿画像と動画の*/
+.episodeimage{
+  max-width: 50%;
+}
+
 /*レスポンシブスマホ対応*/
 
 @media (max-width: 415.98px) {
