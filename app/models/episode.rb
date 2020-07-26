@@ -17,7 +17,7 @@ class Episode < ApplicationRecord
       return unless images.attached? 
       if images.blob.byte_size > 10.megabytes
         images.purge 
-        errors.add(:images, '投稿可能な画像サイズ10MBまでです')
+        errors.add(:images, '投稿可能な画像サイズは10MBまでです')
       elsif !image?
         images.purge
         errors.add(:images, '投稿可能な画像データは「jpg、jpeg、gif、png」です。')
@@ -28,7 +28,7 @@ class Episode < ApplicationRecord
       return unless clip.attached? 
       if clip.blob.byte_size > 512.megabytes
         clip.purge 
-        errors.add(:clip, '投稿可能な動画サイズ512MBまでです')
+        errors.add(:clip, '投稿可能な動画サイズは512MBまでです')
       elsif !video?
         clip.purge
         errors.add(:clip, '投稿可能な動画データは「mp4、mov、qt」です。')

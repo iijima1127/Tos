@@ -37,7 +37,7 @@ class User < ApplicationRecord
       return unless avatar.attached? 
       if avatar.blob.byte_size > 10.megabytes
         avatar.purge 
-        errors.add(:avatar, '投稿可能な画像サイズ10MBまでです')
+        errors.add(:avatar, '投稿可能な画像サイズは10MBまでです')
       elsif !image?
         avatar.purge
         errors.add(:avatar, '投稿可能な画像データは「jpg、jpeg、gif、png」です。')
