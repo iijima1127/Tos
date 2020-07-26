@@ -4,6 +4,7 @@
 <div class="row no-gutters">
   <div class="col-sm-6 offset-sm-3">
     <%= form_with(model: @challenge, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <div class="form-group">
           <%= f.label :goal, '目標' %>
           <%= f.text_field :goal, class: 'form-control' %>
