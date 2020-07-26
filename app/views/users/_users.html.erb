@@ -1,8 +1,8 @@
 <% if users.any? %>
-<div class="row">
+<div class="row no-gutters">
   <% users.each do |user| %>
   <div class="col-md-3">
-    <div class="card mt-3 mb-4 shadow-sm">
+    <div class="card mt-3 mb-4 shadow-sm ml-2 mr-2">
       <div class="card-body">
         <% if user.avatar.attached? %>
         <%= image_tag user.avatar.variant(combine_options:{resize:"300x300^",crop:"300x300+0+0",gravity: :center}).processed,class:"card-img" %>

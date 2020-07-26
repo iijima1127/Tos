@@ -9,7 +9,7 @@
           <p class="font-weight-bold">目標 &#058;<%= challenge.goal %></p>
           <p class="font-weight-bold">挑戦内容 &#058; <%= challenge.challenge %></p>
           <div class="userbutton-container">
-            <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "エピソードを見る", challenge_path(challenge), class: "link" %></button></p>
+            <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "この挑戦を見る", challenge_path(challenge), class: "link" %></button></p>
             <% if current_user == challenge.user %>
               <p class="ml-2"><button class="btn btn-light btn-sm"><%= link_to "挑戦の更新", edit_challenge_path(challenge), class: "link" %></button></p>
               <p class="ml-2"><%= link_to "この挑戦を諦める", challenge, method: :delete, data: { confirm: "エピソードも消えてしまいます。本当によろしいですか？" }, class: 'btn btn-danger btn-sm' %></p>

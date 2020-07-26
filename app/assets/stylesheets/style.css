@@ -15,11 +15,10 @@
 	margin-bottom:0;
 }
 
-.container{
+.cont{
 	position: absolute;
     top: 30%;
     left: 10%;
-    width: 100%;
 }
 #main-jumbo h1{
 	color: white;
@@ -92,7 +91,7 @@
 }
 
 @media (max-width: 415.98px) {
- .container{
+ .cont{
 	margin-top:-2rem;
 }
  #main-jumbo h1 {
@@ -108,7 +107,7 @@
 }
 
 @media (max-width: 375.98px) {
-.container{
+.cont{
 	margin-top:-2rem;
 }
  #main-jumbo h1 {
@@ -218,11 +217,10 @@
 	background-size: cover; 
 }
 
-.container{
+.cont{
 	position: absolute;
     top: 30%;
     left: 10%;
-    width: 100%;
 }
 
 #users-jumbo h1{
@@ -480,3 +478,4 @@
  }
 
 }
+
