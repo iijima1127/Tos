@@ -1,0 +1,14 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        name: 名前
+        email: Eメール
+        profile: プロフィール
+        password: パスワード
+      challenge:
+        challenge: 挑戦
+        goal: 目標
+      episode:
+        content: 今回の取組み
+        variation: 身に起きた変化 

@@ -70,3 +70,6 @@ end
 
 #画像アップロード　→　amazon S3(heroku対応)
 gem "aws-sdk-s3", require: false
+
+#エラーメッセージの日本語化
+gem 'rails-i18n'
