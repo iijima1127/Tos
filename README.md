@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+■アプリケーション概要
+Tos!!はユーザーが挑戦を投稿・共有するサービスです。
 
-Things you may want to cover:
+■機能一覧
+・ユーザー登録機能
+・ログイン機能
+・挑戦の投稿投稿、編集、削除機能
+・エピソードの投稿削除機能
+・他ユーザーへのインフルエンス機能（いいね機能
+・ランキング表示機能
+・挑戦の検索機能
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+■
